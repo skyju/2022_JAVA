@@ -1,7 +1,5 @@
 package day0722;
 
-import java.util.Arrays;
-
 /**
  * BookManager 클래스를 이용하여 도서 객체 추가,삭제,조회하는 클래스
  */
@@ -17,11 +15,13 @@ public class BookTest {
 		manage.add(book3);
 		manage.add(book4);
 		System.out.println("******도서 목록******");
-		System.out.println(Arrays.toString(manage.getList()));
+		for (Book b : manage.getList())
+			System.out.println(b);
 		
 		BookManager manage2 = BookManager.getInstance();
 		System.out.println("******싱글톤 테스트******"); //같은 객체를 공유
-		System.out.println(Arrays.toString(manage2.getList()));
+		for (Book b : manage2.getList())
+			System.out.println(b);
 		
 		System.out.println("******도서 조회: 21425******");
 		System.out.println(manage.searchByIsbn("21425").toString());
@@ -30,23 +30,28 @@ public class BookTest {
 		manage.remove("21425");
 		
 		System.out.println("******도서 목록******");
-		System.out.println(Arrays.toString(manage.getList()));
+		for (Book b : manage.getList())
+			System.out.println(b);
 		
 		System.out.println("******21428, 21429 매거진 도서 추가******");
 		manage.add(new Magazine("21428", "점심밥 맛있게 먹는 법", "먹싸피", "맛밥출판", 17000, "음식", 2022, 7));
 		manage.add(new Magazine("21429", "오늘 점심 메밀소바임", "김오늘", "밥매거진", 21000, "음식", 2022, 8));
 		
 		System.out.println("******도서 목록******");
-		System.out.println(Arrays.toString(manage.getList()));
+		for (Book b : manage.getList())
+			System.out.println(b);
 		
 		System.out.println("******점심이 포함된 도서 목록 조회******");
-		System.out.println(Arrays.toString(manage.searchByTitle("점심")));
+		for (Book b : manage.searchByTitle("점심"))
+			System.out.println(b);
 		
 		System.out.println("******매거진 목록 조회******");
-		System.out.println(Arrays.toString(manage.getMagazines()));
+		for (Book b : manage.getMagazines())
+			System.out.println(b);
 		
 		System.out.println("******일반도서 목록 조회******");
-		System.out.println(Arrays.toString(manage.getBooks()));
+		for (Book b : manage.getBooks())
+			System.out.println(b);
 		
 		System.out.println("******도서 가격 총합******");
 		System.out.println(manage.getTotalPrice());

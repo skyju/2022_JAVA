@@ -4,7 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class Main_백준_7490_0만들기_GoldV_000ms {
+public class Main_백준_7490_0만들기_GoldV_196ms {
 
 	static int N;
 

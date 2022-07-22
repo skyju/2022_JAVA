@@ -32,16 +32,16 @@ public class BookManager {
 		books[size++] = book;
 	}
 
-	// 도서 정보 삭제
+	// 고유번호로 도서정보 삭제
+	// 하나씩 쉬트프하는 거보다 System.arraycopy가 훨씬 빠름
 	public void remove(String isbn) {
 		boolean flag = false;
 		for (int i = 0; i < size; i++) {
 			if (books[i].getIsbn().equals(isbn)) {
 				flag = true;
-				// 쉬프트
-				for (int j = i; j < MAX_SIZE - 1; j++)
-					books[j] = books[j + 1];
-				this.size -= 1;
+				System.arraycopy(books, i + 1, books, i, size - i - 1);
+				size--;
+				break;
 			}
 		}
 		if (flag) {
@@ -53,6 +53,10 @@ public class BookManager {
 
 	// 도서 리스트 반환
 	public Book[] getList() {
+		/*
+		 * Book[] result = new Book[size]; System.arraycopy(books, 0, result, 0, size);
+		 * return result;
+		 */
 		return Arrays.copyOfRange(books, 0, size);
 	}
 
@@ -65,63 +69,50 @@ public class BookManager {
 		return null;
 	}
 
+	// 갯수 세는 for문을 돌리는 거보다
+	// size로 일단 만들고 내보낼때 짤라 보내는게 빠를거 같아요!! 수정 -> 메모리는 낭비됨
+	// contains 보다 indexOf 쓰는게 속도는 더 빨라요!
 	public Book[] searchByTitle(String title) {
-		int count = 0;
+
+		Book[] ans = new Book[size];
+		
+		//대소문자 상관없이 검색되도록
+		int index = 0;
 		for (int i = 0; i < size; i++) {
-			if (books[i].getTitle().contains(title))
-				count++;
+			if (books[i].getTitle().toLowerCase().contains(title.toLowerCase()))
+				ans[index++] = books[i];
 		}
-		if (count == 0)
+		if (index == 0)
 			return null;
-
-		Book[] ans = new Book[count];
-
-		count = 0;
-		for (int i = 0; i < size; i++) {
-			if (books[i].getTitle().contains(title))
-				ans[count++] = books[i];
-		}
-		return ans;
+		return Arrays.copyOfRange(ans, 0, index);
 	}
 
 	public Magazine[] getMagazines() {
-		int count = 0;
+
+		Magazine[] ans = new Magazine[size];
+
+		int index = 0;
 		for (int i = 0; i < size; i++) {
 			if (books[i] instanceof Magazine)
-				count++;
+				ans[index++] = (Magazine) books[i];
 		}
-
-		if (count == 0)
+		if (index == 0)
 			return null;
-
-		Magazine[] ans = new Magazine[count];
-
-		count = 0;
-		for (int i = 0; i < size; i++) {
-			if (books[i] instanceof Magazine)
-				ans[count++] = (Magazine) books[i];
-		}
-		return ans;
+		return Arrays.copyOfRange(ans, 0, index);
 	}
 
 	public Book[] getBooks() {
-		int count = 0;
+		
+		Book[] ans = new Book[size];
+		
+		int index = 0;
 		for (int i = 0; i < size; i++) {
 			if (!(books[i] instanceof Magazine))
-				count++;
+				ans[index++] = books[i];
 		}
-
-		if (count == 0)
+		if (index == 0)
 			return null;
-
-		Book[] ans = new Book[count];
-
-		count = 0;
-		for (int i = 0; i < size; i++) {
-			if (!(books[i] instanceof Magazine))
-				ans[count++] = books[i];
-		}
-		return ans;
+		return Arrays.copyOfRange(ans, 0, index);
 	}
 
 	public int getTotalPrice() {

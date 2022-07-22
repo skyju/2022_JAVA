@@ -36,6 +36,6 @@ public class Magazine extends Book {
 	@Override
 	public String toString() {
 		return getIsbn() + "  |  " + String.format("%10s",getTitle()) + "\t  |  " +  getAuthor() + "  |  " + getPublisher()
-				+ "  |  " + getPrice() + "  |  " + getDesc() + "  |  " + year + "  |  " + month +"\n";
+				+ "  |  " + getPrice() + "  |  " + getDesc() + "  |  " + year + "  |  " + month;
 	}
 }

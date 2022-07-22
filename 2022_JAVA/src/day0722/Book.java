@@ -77,6 +77,6 @@ public class Book {
 	@Override
 	public String toString() {
 		return isbn + "  |  " + String.format("%10s",title) + "\t  |  " +  author + "  |  " + publisher
-				+ "  |  " + price + "  |  " + desc + "\n";
+				+ "  |  " + price + "  |  " + desc;
 	}
 }
