@@ -30,7 +30,7 @@ public class Test_Debug {
 		System.out.println(a);
 		
 		
-		int localvar = 300;
+//		int localvar = 300;
 //		Scanner sc = new Scanner(System.in);
 		Scanner sc = new Scanner(new File("input.txt"));
 		int[][] b = new int[5][5];
@@ -43,6 +43,7 @@ public class Test_Debug {
 		for (int i = 0 ; i < b.length; i++) {
 			System.out.println(Arrays.toString(b[i]));
 		}
+		sc.close();
 		
 	}
 }
