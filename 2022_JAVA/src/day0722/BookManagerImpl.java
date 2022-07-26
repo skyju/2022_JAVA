@@ -5,22 +5,20 @@ import java.util.Arrays;
 /**
  * 도서리스트를 배열로 유지하며 관리하는 클래스
  */
-public class BookManager {
+public class BookManagerImpl implements IBookManager {
 
 	private static int MAX_SIZE = 100;
 	private Book[] books = new Book[MAX_SIZE];
 	private int size;
+	private static IBookManager instance;
 
 	// + 추가.. 싱글톤
-	private static BookManager bm;
-
-	private BookManager() {
+	private BookManagerImpl() {
 	}
-
-	public static BookManager getInstance() {
-		if (bm == null)
-			bm = new BookManager();
-		return bm;
+	public static IBookManager getInstance() {
+		if (instance == null)
+			instance = new BookManagerImpl();
+		return instance;
 	}
 
 	// 도서 정보 등록

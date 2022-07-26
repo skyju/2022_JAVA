@@ -8,7 +8,7 @@ public class BookTest {
 		Book book3 = new Book("21426", "이싸피의 자바 마스터하는 법", "이싸피", "싸피출판", 17000, "Java 기본 문법");
 		Book book4 = new Book("21427", "자바로 최고되는 법", "김뭐뭐", "짱짱출판", 18000, "Java 응용");
 		
-		BookManager manage = BookManager.getInstance();
+		IBookManager manage = BookManagerImpl.getInstance();
 		manage.add(new Book("21424", "김싸피의 싸피생활", "김싸피", "싸피출판", 20000, "생활 정보"));
 		manage.add(new Book("21425", "박싸피의 싸피꿀팁", "박싸피", "싸피출판", 12000, "생활 정보"));
 		manage.add(new Book("11421", "오늘 점심 만두육개장", "점박사", "점심출판", 15000, "음식"));
@@ -18,7 +18,7 @@ public class BookTest {
 		for (Book b : manage.getList())
 			System.out.println(b);
 		
-		BookManager manage2 = BookManager.getInstance();
+		IBookManager manage2 = BookManagerImpl.getInstance();
 		System.out.println("******싱글톤 테스트******"); //같은 객체를 공유
 		for (Book b : manage2.getList())
 			System.out.println(b);

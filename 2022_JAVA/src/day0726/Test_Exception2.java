@@ -31,7 +31,7 @@ public class Test_Exception2 {
 		
 		
 		// 2. jdk 1.7이상에서 리소스의 자동 close처리
-		// Auto-close
+		// Auto-close... finally block을 jvm이 대신 만들어줌
 		try(FileInputStream fis = new FileInputStream(new File("input.txt"));
 			Scanner sc = new Scanner(System.in);
 			) {
