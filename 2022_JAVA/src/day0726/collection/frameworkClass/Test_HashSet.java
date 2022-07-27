@@ -56,25 +56,25 @@ class MyCar {
 		return "[" + number + "]";
 	}
 
-	@Override
-	public int hashCode() {
-		return number;
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (!(obj instanceof MyCar))
-			return false;
+//	@Override
+//	public int hashCode() {
+//		return number;
+//	}
+//
+//	@Override
+//	public boolean equals(Object obj) {
+//		if (this == obj)
+//			return true;
+//		if (obj == null)
+//			return false;
+//		if (!(obj instanceof MyCar))
+//			return false;
 //		if (getClass() != obj.getClass())
 //			return false;
-		MyCar mc = (MyCar) obj;
-		if (number != mc.number)
-			return false;
-		return true;
-	}
+//		MyCar mc = (MyCar) obj;
+//		if (number != mc.number)
+//			return false;
+//		return true;
+//	}
 
 }
