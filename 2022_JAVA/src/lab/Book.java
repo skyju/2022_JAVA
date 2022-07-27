@@ -1,4 +1,4 @@
-package day0722;
+package lab;
 
 /**
  * 도서 정보를 나타내는 클래스
@@ -11,11 +11,12 @@ public class Book {
 	private String publisher;
 	private int price;
 	private String desc;
-	
+	private int quantity;
+
 	public Book() {
 	}
 
-	public Book(String isbn, String title, String author, String publisher, int price, String desc) {
+	public Book(String isbn, String title, String author, String publisher, int price, String desc, int quantity) {
 		super();
 		this.isbn = isbn;
 		this.title = title;
@@ -23,9 +24,9 @@ public class Book {
 		this.publisher = publisher;
 		this.price = price;
 		this.desc = desc;
+		this.quantity = quantity;
 	}
-	
-	
+
 	public String getIsbn() {
 		return isbn;
 	}
@@ -73,10 +74,18 @@ public class Book {
 	public void setDesc(String desc) {
 		this.desc = desc;
 	}
-	
+
+	public int getQuantity() {
+		return quantity;
+	}
+
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
+	}
+
 	@Override
 	public String toString() {
-		return isbn + "  |  " + String.format("%10s",title) + "\t  |  " +  author + "  |  " + publisher
-				+ "  |  " + price + "  |  " + desc;
+		return isbn + "  |  " + String.format("%10s", title) + "\t  |  " + author + "  |  " + publisher + "  |  "
+				+ price + "  |  " + desc + "  |  " + quantity;
 	}
 }

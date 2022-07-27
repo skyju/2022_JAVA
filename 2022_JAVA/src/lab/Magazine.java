@@ -1,4 +1,4 @@
-package day0722;
+package lab;
 
 /**
  * 잡지 정보를 나타내는 클래스
@@ -11,8 +11,8 @@ public class Magazine extends Book {
 	}
 
 	public Magazine(String isbn, String title, String author, String publisher, int price, String desc, int year,
-			int month) {
-		super(isbn, title, author, publisher, price, desc);
+			int month, int quantity) {
+		super(isbn, title, author, publisher, price, desc, quantity);
 		this.year = year;
 		this.month = month;
 	}
@@ -36,6 +36,6 @@ public class Magazine extends Book {
 	@Override
 	public String toString() {
 		return getIsbn() + "  |  " + String.format("%10s",getTitle()) + "\t  |  " +  getAuthor() + "  |  " + getPublisher()
-				+ "  |  " + getPrice() + "  |  " + getDesc() + "  |  " + year + "  |  " + month;
+				+ "  |  " + getPrice() + "  |  " + getDesc() + "  |  " + getQuantity() + "  |  " + year + "  |  " + month;
 	}
 }

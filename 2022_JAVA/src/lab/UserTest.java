@@ -1,4 +1,4 @@
-package day0722;
+package lab;
 
 import java.util.Arrays;
 
@@ -23,9 +23,16 @@ public class UserTest {
 		um.add(user2);
 		um.add(vuser);
 		
+		System.out.println("사용자 리스트------");
+		System.out.println(Arrays.toString(um.getList()));
+		
 		// "김" 이라는 단어를 이름에 포함하는 사용자 검색 결과 toString 으로 출력
 		System.out.println("김씨 성 가진 유저 리스트-------");
-		System.out.println(Arrays.toString(um.searchByName("김")));
+		try {
+			System.out.println(Arrays.toString(um.searchByName("김")));
+		} catch (NameNotFoundException e) {
+			e.printStackTrace();
+		}
 		
 		// 일반 사용자 리스트만 가져와서 toString 으로 출력
 		System.out.println("일반 사용자 리스트-------");

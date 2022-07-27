@@ -1,4 +1,4 @@
-package day0722;
+package lab;
 
 public class VipUser extends User {
 	

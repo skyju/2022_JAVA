@@ -1,4 +1,4 @@
-package collection;
+package classJAVA.collection;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -9,6 +9,9 @@ import java.util.Set;
  *
  *         hashing 기법으로 데이터의 중복을 체크한다. 
  *         => hashCode(), equals() 두 method를 overriding 해야 함.
+ *         
+ * Hashing : 검색 빠르게.. -> 정렬이 한번만 필요하면 OK
+ * Tree : 정렬된 상태.. -> 중간중간 여러번 정렬해야 한다면...
  */
 public class Test_HashSet {
 	public static void main(String[] args) {
@@ -56,25 +59,25 @@ class MyCar {
 		return "[" + number + "]";
 	}
 
-//	@Override
-//	public int hashCode() {
-//		return number;
-//	}
-//
-//	@Override
-//	public boolean equals(Object obj) {
-//		if (this == obj)
-//			return true;
-//		if (obj == null)
-//			return false;
-//		if (!(obj instanceof MyCar))
-//			return false;
-//		if (getClass() != obj.getClass())
-//			return false;
-//		MyCar mc = (MyCar) obj;
-//		if (number != mc.number)
-//			return false;
-//		return true;
-//	}
+	@Override
+	public int hashCode() {
+		return number;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (!(obj instanceof MyCar))
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		MyCar mc = (MyCar) obj;
+		if (number != mc.number)
+			return false;
+		return true;
+	}
 
 }

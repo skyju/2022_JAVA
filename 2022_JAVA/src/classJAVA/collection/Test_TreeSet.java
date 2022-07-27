@@ -1,4 +1,4 @@
-package collection;
+package classJAVA.collection;
 
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -8,9 +8,12 @@ import java.util.TreeSet;
  * 
  * @author SSAFY
  *
- *         TreeSet 내부적으로 항상 정렬된 상태 유지 입력 시마다 정렬된 상태를 유지해야 하는 경우 부분 정렬된 집합을 꺼내야
- *         하는 경우
+ *         TreeSet 내부적으로 항상 정렬된 상태 유지
+ *         입력 시마다 정렬된 상태를 유지해야 하는 경우
+ *         부분 정렬된 집합을 꺼내야 하는 경우
  * 
+ *         비교기 만들지 않으면 에러!
+ *         
  *         내부 비교기 : Comparable Comparable Interface 구현, compareTo(YourCar o)
  *         method overriding
  * 
