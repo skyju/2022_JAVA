@@ -1,4 +1,4 @@
-package day0726;
+package classJAVA;
 
 import java.io.File;
 import java.io.FileInputStream;

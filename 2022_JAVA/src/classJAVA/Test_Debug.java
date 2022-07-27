@@ -1,4 +1,4 @@
-package day0722;
+package classJAVA;
 
 import java.io.File;
 import java.io.FileNotFoundException;

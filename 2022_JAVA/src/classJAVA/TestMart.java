@@ -1,4 +1,4 @@
-package day0720;
+package classJAVA;
 
 public class TestMart {
 	public static void main(String[] args) {

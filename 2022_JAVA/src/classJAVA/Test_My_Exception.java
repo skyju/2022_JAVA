@@ -1,4 +1,4 @@
-package day0726;
+package classJAVA;
 
 public class Test_My_Exception {
 

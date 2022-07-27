@@ -1,4 +1,4 @@
-package day0719;
+package classJAVA;
 
 public class Test_Array {
 

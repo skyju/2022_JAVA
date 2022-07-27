@@ -1,4 +1,4 @@
-package day0726.collection.frameworkClass;
+package collection;
 
 import java.util.HashSet;
 import java.util.Set;
