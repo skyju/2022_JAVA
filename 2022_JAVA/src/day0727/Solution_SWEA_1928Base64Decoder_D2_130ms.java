@@ -8,7 +8,7 @@ import java.util.Base64.Decoder;
 public class Solution_SWEA_1928Base64Decoder_D2_130ms {
 
 	public static void main(String[] args) throws Exception {
-
+		
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
 		int T = Integer.parseInt(br.readLine());
