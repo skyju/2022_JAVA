@@ -6,7 +6,6 @@ public class Solution_SWEA_3234_준환이의양팔저울_D4_814ms {
 
 	static int N, max;
 	static int[] src, map;
-	static boolean[] visit;
 
 	public static void main(String[] args) throws Exception {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -22,7 +21,6 @@ public class Solution_SWEA_3234_준환이의양팔저울_D4_814ms {
 			st = new StringTokenizer(br.readLine(), " ");
 			src = new int[N];
 			map = new int[N];
-			visit = new boolean[N];
 
 			for (int i = 0; i < N; i++)
 				src[i] = Integer.parseInt(st.nextToken());
