@@ -4,11 +4,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class Solution_SWEA_8282_방향전환_D4_000ms {
-	
-	static int[] dr = {0, 1, 0, -1};
-	static int[] dc = {1, 0, -1, 0};
-	static final int size = 100;
+public class Solution_SWEA_8282_방향전환_D4_118ms {
 	
 	public static void main(String[] args) throws Exception {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
